@@ -21,10 +21,12 @@ During this hands-on lab, participants will gain practical experience in using B
 
 First, we need to download the source code of the project from our git repository.
 Let’s cd into the application so we can scan the app: <br/>
-
+```
 git clone https://gitlab.practical-devsecops.training/pdso/rails.git webapp
+```
+```
 cd webapp
-
+```
 <br/>
  
 <p align="center">
@@ -35,9 +37,9 @@ cd webapp
 <br />
 
 Basically, our system doesn’t have Ruby installed, let’s update apt first: <br/>
-
+```
 apt update
-
+```
 <br/>
  
 <p align="center">
@@ -48,9 +50,9 @@ apt update
 <br />
 
 Then, let’s install Ruby with the following command: <br/>
-
+```
 apt install ruby-full -y
-
+```
 <br/>
  
 <p align="center">
@@ -61,9 +63,9 @@ apt install ruby-full -y
 <br />
 
 Let’s install the Brakeman tool to perform static analysis: <br/>
-
+```
 gem install brakeman -v 5.2.1
-
+```
 <br/>
  
 <p align="center">
@@ -74,9 +76,9 @@ gem install brakeman -v 5.2.1
 <br />
 
 We have successfully installed Brakeman, let’s explore the functionality it provides us: <br/>
-
+```
 brakeman -h
-
+```
 <br/>
  
 <p align="center">
@@ -86,10 +88,10 @@ brakeman -h
 <br />
 <br />
 
-We are using the tee command here to show the output and store it in a file simultaneously: <br/>
-
+Let's run the scan. We are using the tee command here to show the output and store it in a file simultaneously: <br/>
+```
 brakeman -f json | tee result.json
-
+```
 <br/>
  
 <p align="center">
@@ -122,9 +124,9 @@ EOF
 <br />
 
 Let’s re-run the scanner: <br/>
-
+```
 brakeman -f json -i brakeman.ignore | tee result.json
-
+```
 <br/>
  
 <p align="center">
